@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<div class="row">
+    <div class="col">
+        <span id="quiz_title">Quiz</span>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col" id="quiz_content">
+        {% for ques in data %}
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10 quiz_question">{{loop.index}}. {{ques.question}}</div>
+                <div class="col-1"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10 quiz_question">
+                    <img src="{{ques.material}}" alt="cat lie on back">
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-3 quiz_answer">
+                    <input type="radio" name="true or false" value="True"> True<br>
+                    <input type="radio" name="true or false" value="False"> False<br>
+                </div>
+                <div class="col-7"></div>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <i class="arrow left"></i><button class="previous">Prev</button>
+    </div>
+    <div class="col-10"></div>
+    <div class="col">
+        <button class="next">Next</button><i class="arrow right"></i>
+    </div>
+</div>
+<br>
+
+{% endblock %}
