@@ -51,4 +51,12 @@
     border-radius: 8px;
     border: 1px solid cornflowerblue;
 }
+/*body*/
+#body_title{
+    color:#666666;
+    font-family: system-ui;;
+    font-weight: 800;
+    font-size: 33px;
+    padding-left: 40px;
+}
   
