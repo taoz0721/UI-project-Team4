@@ -30,6 +30,11 @@ body_data=[
         "src":"https://www.nutravet.co.uk/sites/default/files/user/calm-cat.jpg",
         "id":"Ball Shaped",
         "description":["Anxiety/Fear: ", "The crouched down body position enables cat to spring off, should they feel the need."]
+    },
+    {
+        "src":"https://cdn.shopify.com/s/files/1/0025/1373/1702/files/Cat_lying_on_its_back_with_tail_in_the_air_medium.gif?v=1537362532",
+        "id":"Lie on back",
+        "description":["Trusting: ", "If your cat shows its tummy to you, it means that he/she really trusts you. BUT, it  IS NOT a tummy rub request. Some cats don't like tummy rubs."]
     }
 ]
 
@@ -41,15 +46,38 @@ tails_data=[
     },
     {
         "src":"https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat",
-        "id":"Anxious/Terrified",
+        "id":"Anxious, Terrified",
         "description":["Low/Down","Tucked - small target"]
     },
     {
         "src":"https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4",
-        "id":"Irritated/Upset",
+        "id":"Irritated, Upset",
         "description":["Flicking/Agitation", "Lack of receptivity - back off"]
     }
 ]
+ears_eyes_data=[
+    {
+        "src":"https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif",
+        "id": "Angery, Fearful",
+        "description":{"Ears": "Flatten Down", "Eyes": "Large and Dilated"}
+    },
+    {
+        "src":"https://thumbs.gfycat.com/ImmediateCleanAmericankestrel-size_restricted.gif",
+        "id": "Curious, Excited (Hunting)",
+        "description":{"Ears": "Hight and Erect", "Eyes": "Large and Dilated"}
+    },
+    {
+        "src":"https://i.gifer.com/ziH.gif",
+        "id": "Attentive",
+        "description":{"Ears": "Hight and Erect", "Eyes": "Narrow and Constricted"}
+    },
+    {
+        "src":"https://c.tenor.com/BjPLwhBwD1oAAAAM/ryuzcn.gif",
+        "id": "Content, Relaxed, Comfortable",
+        "description":{"Ears": "Forwards", "Eyes": "Slow Blink"}
+    }
+]
+
 
 # ROUTES
 
@@ -66,6 +94,11 @@ def body():
 def tails():
     global tails_data
     return render_template('tails.html', data=tails_data) 
+
+@app.route('/earsandeyes')
+def earsAndeyes():
+    global ears_eyes_data
+    return render_template('earsAndeyes.html', data=ears_eyes_data) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):
