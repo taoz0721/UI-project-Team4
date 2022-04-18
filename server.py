@@ -25,7 +25,7 @@ def hello():
 
 @app.route('/')
 def hello_world():
-   return render_template('hello_world.html')   
+   return render_template('homepage.html')   
 
 
 @app.route('/hello/<name>')
