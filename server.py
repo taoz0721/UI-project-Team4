@@ -33,7 +33,7 @@ body_data=[
     },
     {
         "src":"https://cdn.shopify.com/s/files/1/0025/1373/1702/files/Cat_lying_on_its_back_with_tail_in_the_air_medium.gif?v=1537362532",
-        "id":"Lie on back",
+        "id":"Lie on Back",
         "description":["Trusting: ", "If your cat shows its tummy to you, it means that he/she really trusts you. BUT, it  IS NOT a tummy rub request. Some cats don't like tummy rubs."]
     }
 ]
