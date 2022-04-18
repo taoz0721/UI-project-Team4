@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'result.js') }}"></script>
+
+<br>
+<br>
+<div class="row">
+    <div class="col">
+        <span id="quiz_title">Quiz</span>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-6 text_center" id="quiz_result">
+        <br><br><br><br>
+        Your Score {{data}}/1
+    </div>
+    <div class="col-6" id="result_img">
+        <img src="https://nutrisourcepetfoods.com/wp-content/uploads/2021/12/cat-yowl.-.jpg" width="100%" alt="cat">
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-10 text_center">
+        <button id="back_home">Back Home</button>
+    </div>
+    <div class="col">
+    </div>
+</div>
+<br>
+
+{% endblock %}

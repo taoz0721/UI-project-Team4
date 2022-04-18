@@ -3,6 +3,6 @@ $(document).ready(function(){
         window.location.href='/tails';
     })
     $(".next").click(function(){
-        window.location.href='/body/quiz';
+        window.location.href='/quiz/body';
     })
 })

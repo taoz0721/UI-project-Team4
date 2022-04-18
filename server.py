@@ -82,36 +82,64 @@ body_quiz_data=[
         "question":"When a cat lie on its back like the video below, it definitely means that it requests a tummy rub.",
         "material":"https://cdn.shopify.com/s/files/1/0025/1373/1702/files/Cat_lying_on_its_back_with_tail_in_the_air_medium.gif?v=1537362532",
         "answer":"False",
-        "type": "True or False"
+        "type": "TF"
     }
 ]
+progress=[]
+score=1
+
+
 
 
 # ROUTES
 
 @app.route('/')
 def homepage():
-   return render_template('homepage.html')   
+    global progress
+
+    progress.append("home")
+    return render_template('homepage.html')   
 
 @app.route('/body')
 def body():
     global body_data
+    global progress
+
+    progress.append("body")
     return render_template('body.html', data=body_data)
 
-@app.route('/body/quiz')
+@app.route('/quiz/body')
 def bodyQuiz():
     global body_quiz_data
-    return render_template('bodyQuiz.html', data=body_quiz_data)  
+    global progress
+    global score
+
+    progress.append("quiz/body")
+    return render_template('bodyQuiz.html', data=body_quiz_data, score=score)  
 
 @app.route('/tails')
 def tails():
     global tails_data
+    global progress
+
+    progress.append("")
     return render_template('tails.html', data=tails_data) 
 
 @app.route('/earsandeyes')
 def earsAndeyes():
     global ears_eyes_data
-    return render_template('earsAndeyes.html', data=ears_eyes_data) 
+    global progress
+
+    progress.append("earsandeyes")
+    return render_template('earsAndeyes.html', data=ears_eyes_data)
+
+@app.route('/result')
+def result():
+    global score
+    global progress
+
+    progress.append("result")
+    return render_template('result.html', data=score) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):
