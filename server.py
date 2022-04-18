@@ -33,6 +33,24 @@ body_data=[
     }
 ]
 
+tails_data=[
+    {
+        "src": "https://c.tenor.com/34emVVQvzPMAAAAM/cat-white-cat.gif",
+        "id":"Friendly",
+        "description":["Hight","Vibrating"]
+    },
+    {
+        "src":"https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat",
+        "id":"Anxious/Terrified",
+        "description":["Low/Down","Tucked - small target"]
+    },
+    {
+        "src":"https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4",
+        "id":"Irritated/Upset",
+        "description":["Flicking/Agitation", "Lack of receptivity - back off"]
+    }
+]
+
 # ROUTES
 
 @app.route('/')
@@ -43,6 +61,11 @@ def homepage():
 def body():
     global body_data
     return render_template('body.html', data=body_data) 
+
+@app.route('/tails')
+def tails():
+    global tails_data
+    return render_template('tails.html', data=tails_data) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):
