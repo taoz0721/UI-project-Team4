@@ -5,6 +5,9 @@
 .nav-item{
     text-align: center;
 }
+#tabs .ui-state-active {
+    background: lightblue(127, 141, 146);
+}
 .nav_text{
     font-family: 'Gill Sans', sans-serif;
     font-size: 35px;
