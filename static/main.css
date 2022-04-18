@@ -1,3 +1,4 @@
+/*layout-nav*/
 .nav_bg{
     background-color: cornflowerblue;
 }
@@ -6,7 +7,7 @@
 }
 .nav_text{
     font-family: 'Gill Sans', sans-serif;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
 }
 .dropdown-menu {
@@ -27,4 +28,27 @@
 .dropdown:hover .dropdown-menu {
     display: block;
   }
+/*homepage*/
+.text_center{
+    text-align: center;
+}
+#home_title{
+    color:#666666;
+    font-family: system-ui;;
+    font-weight: 800;
+    font-size: 33px;
+}
+#home_content{
+    color:#666666;
+    font-family: system-ui;;
+    font-size: 30px;
+}
+#home_start{
+    color:whitesmoke;
+    font-family: system-ui;;
+    font-size: 30px;
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    border: 1px solid cornflowerblue;
+}
   
