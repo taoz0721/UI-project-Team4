@@ -77,6 +77,14 @@ ears_eyes_data=[
         "description":{"Ears": "Forwards", "Eyes": "Slow Blink"}
     }
 ]
+body_quiz_data=[
+    {
+        "question":"When a cat lie on its back like the video below, it definitely means that it requests a tummy rub.",
+        "material":"https://cdn.shopify.com/s/files/1/0025/1373/1702/files/Cat_lying_on_its_back_with_tail_in_the_air_medium.gif?v=1537362532",
+        "answer":"False",
+        "type": "True or False"
+    }
+]
 
 
 # ROUTES
@@ -88,7 +96,12 @@ def homepage():
 @app.route('/body')
 def body():
     global body_data
-    return render_template('body.html', data=body_data) 
+    return render_template('body.html', data=body_data)
+
+@app.route('/body/quiz')
+def bodyQuiz():
+    global body_quiz_data
+    return render_template('bodyQuiz.html', data=body_quiz_data)  
 
 @app.route('/tails')
 def tails():
