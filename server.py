@@ -87,7 +87,7 @@ body_quiz_data=[
 ]
 progress=[]
 score=1
-
+user_score = 0
 
 
 
@@ -113,7 +113,6 @@ def bodyQuiz():
     global body_quiz_data
     global progress
     global score
-
     progress.append("quiz/body")
     return render_template('bodyQuiz.html', data=body_quiz_data, score=score)  
 
@@ -133,13 +132,22 @@ def earsAndeyes():
     progress.append("earsandeyes")
     return render_template('earsAndeyes.html', data=ears_eyes_data)
 
-@app.route('/result')
-def result():
-    global score
-    global progress
+# for ajax function that achieve user's choice
+@app.route('/quiz_get_result', methods=['POST'])
+def quiz_get_result():
+    global user_score
+    get = request.get_json()
+    print(get)
+    user_score += get
+    return jsonify(user_score=user_score)
 
+@app.route('/result',methods=['GET', 'POST'])
+def result():
+    #global score
+    global user_score
+    global progress
     progress.append("result")
-    return render_template('result.html', data=score) 
+    return render_template('result.html', data=user_score) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):

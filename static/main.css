@@ -5,6 +5,9 @@
 .nav-item{
     text-align: center;
 }
+.choose-color{
+    background-color: rgb(193, 205, 238);
+}
 #tabs .ui-state-active {
     background: lightblue(127, 141, 146);
 }
