@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<div class="row">
+    <div class="col">
+        <span id="body_title">TAILS</span>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col" id="body_content">
+        {% for point in data %}
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-4 body_pic text_center"><img class="body_image" src="{{point.src}}" alt="{{point.id}}_tail"></div>
+                <div class="col-6 body_description">
+                    <div class="text">
+                        <div class="body_item_title">{{point.id}}</div>
+                        <div>
+                            <ul>
+                            {% for word in point.description %}
+                                <li>{{word}}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <br>
+            <br>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <i class="arrow left"></i><button class="previous">Prev</button>
+    </div>
+    <div class="col-10"></div>
+    <div class="col">
+        <button class="next">Next</button><i class="arrow right"></i>
+    </div>
+</div>
+<br>
+
+{% endblock %}
