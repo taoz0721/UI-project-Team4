@@ -15,6 +15,23 @@ data = [
         "name": "jim halpert"
     },
 ]
+body_data=[
+    {
+        "src": "https://cdn-fastly.petguide.com/media/2022/02/16/8259958/what-does-a-cat-s-arched-back-mean.jpg",
+        "id":"Arched body",
+        "description":["Aggression: ","When a cat is FEARFUL or ANGRY, they will often make themselves as big as possible."]
+    },
+    {
+        "src":"https://www.treehugger.com/thmb/QIn7TRcupWFqir0DCIYLTaqrZ3Q=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/tabby-cat-on-a-bed-862512230-2d351b8055254269aab1381e7c077f1e.jpg",
+        "id":"Normal Posture",
+        "description":["Confidence: ","If a cat is pointing its head or body to you, they might be RECEPTIVE to your advances."]
+    },
+    {
+        "src":"https://www.nutravet.co.uk/sites/default/files/user/calm-cat.jpg",
+        "id":"Ball Shaped",
+        "description":["Anxiety/Fear: ", "The crouched down body position enables cat to spring off, should they feel the need."]
+    }
+]
 
 # ROUTES
 
@@ -24,7 +41,8 @@ def homepage():
 
 @app.route('/body')
 def body():
-   return render_template('body.html') 
+    global body_data
+    return render_template('body.html', data=body_data) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):
