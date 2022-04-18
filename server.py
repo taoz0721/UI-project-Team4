@@ -18,15 +18,13 @@ data = [
 
 # ROUTES
 
-@app.route('/hi')
-def hello():
-   return 'Hi hi hi hi hi hi hi hi hi'
-
-
 @app.route('/')
-def hello_world():
+def homepage():
    return render_template('homepage.html')   
 
+@app.route('/body')
+def body():
+   return render_template('body.html') 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):
