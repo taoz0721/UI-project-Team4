@@ -89,7 +89,7 @@
     font-weight: 800;
 }
 
-.previous, .next, #save{
+.previous, .next, #save, #review{
     color:whitesmoke;
     padding: 2px 10px;
     font-family: system-ui;;

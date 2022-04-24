@@ -26,6 +26,12 @@ function dropSaved(data, idx, user_answer){
 }
 
 $(document).ready(function(){
+    
+    $("#review").click(function(){
+        var area=data["area"]
+        var link="/"+""+area+"";
+        window.location.href=link;
+    });
     if(data["type"]=="TF"){
         TFsaved(data, idx, user_answer);
     }

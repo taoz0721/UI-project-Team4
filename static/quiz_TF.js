@@ -149,6 +149,12 @@ function saveTF(data, idx){
             if(radioValue==data["answer"]){
                 answer = {"score":1, "idx":idx, "save":true, "type": "TF", "answer":radioValue};
             }
+            $("#review_btn").html("<button id='review'>Review</button>");
+                    $("#review").click(function(){
+                        var area=data["area"]
+                        var link="/"+""+area+"";
+                        window.location.href=link;
+                    });
            $.ajax({
                 type: "POST",
                 url: "/quiz_get_result",
@@ -165,6 +171,7 @@ function saveTF(data, idx){
                     else{
                         $(".check_div_TF[data-id='"+data_id+"']").html("<img src='https://us.123rf.com/450wm/vectora/vectora1704/vectora170401047/75817847-red-cross-symbol-icon-as-delete-remove-fail-failure-or-incorrect-answer-icon.jpg' width='30%'>");
                     }
+                    
                     //HasSaved=true;
                 }
             })
@@ -215,6 +222,12 @@ function saveDrop(data, idx){
             if(right_num==3){
                 answer["score"]=1;
             }
+            $("#review_btn").html("<button id='review'>Review</button>");
+                    $("#review").click(function(){
+                        var area=data["area"]
+                        var link="/"+""+area+"";
+                        window.location.href=link;
+                    });
             $.ajax({
                 type: "POST",
                 url: "/quiz_get_result",
