@@ -133,7 +133,50 @@
     border-radius: 8px;
     border: 1px solid cornflowerblue;
 }
+
 .quiz_image{
     width:100%;
+}
+.drop_div{
+    height:50px;
+    border-radius: 8px;
+    border: 3px solid cornflowerblue;
+}
+.check_div{
+    text-align: center;
+    color: #F75D59;
+    font-family: system-ui;
+    font-size: 18px;
+
+}
+.check_div_TF{
+    display: inline-block;
+}
+.draggable_tag{
+    color:whitesmoke;
+    text-align:center;
+    font-family: system-ui;
+    padding: 5px;
+    font-size: 22px;
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    border: 1px solid cornflowerblue;
+}
+.hover{
+    color:whitesmoke;
+    text-align:center;
+    font-family: system-ui;
+    padding: 5px;
+    font-size: 22px;
+    background-color: rgb(70, 121, 215);
+    border-radius: 8px;
+    border: 1px solid rgb(70, 121, 215);
+    cursor: all-scroll;
+}
+.over{
+    height:50px;
+    border-radius: 8px;
+    border: 3px solid cornflowerblue;
+    background-color: #C2DFFF;
 }
   

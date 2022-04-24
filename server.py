@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, g
 from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
@@ -106,13 +106,13 @@ quiz_data={
         "question":"Drag to match the image with the corresponding emotion according to the hints of tails.",
         "material":{
             "https://c.tenor.com/34emVVQvzPMAAAAM/cat-white-cat.gif": "Friendly",
-            "https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat": "Anxious, Terrified",
-            "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4": "Irritated, Upset"
+            "https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat": "Anxious",
+            "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4": "Irritated/Upset"
         },
         "tags":[
-            "Irritated, Upset",
+            "Irritated/Upset",
             "Friendly",
-            "Anxious, Terrified"
+            "Anxious"
         ]
     },
     "4":{
@@ -120,9 +120,9 @@ quiz_data={
         "area": "earsandeyes",
         "question":"Drag to match the image with the corresponding emotion according to the hints of ears and eyes.",
          "material":{
-            "https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif": "Angery, Fearful",
+            "https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif": "Angery/Fearful",
             "https://i.gifer.com/ziH.gif": "Attentive",
-            "https://c.tenor.com/BjPLwhBwD1oAAAAM/ryuzcn.gif": "Content, Relaxed, Comfortable"
+            "https://c.tenor.com/BjPLwhBwD1oAAAAM/ryuzcn.gif": "Comfortable"
         },
         "tags":[
             "Attentive",
@@ -133,8 +133,19 @@ quiz_data={
 }
 progress=[]
 score=1
-user_score = 0
-
+user_score = [0,0,0,0]
+save={
+    "1": False,
+    "2": False,
+    "3": False,
+    "4": False
+}
+answer={
+    "1": None,
+    "2": None,
+    "3": None,
+    "4": None
+}
 
 
 # ROUTES
@@ -158,9 +169,13 @@ def body():
 def bodyQuiz(index=None):
     global quiz_data
     global progress
+    global save
 
     progress.append("quiz")
-    return render_template('bodyQuiz.html', data=quiz_data[index], index=index)  
+    if save[index]==False:
+        return render_template('bodyQuiz.html', data=quiz_data[index], index=index, save=save[index])
+    else:
+        return render_template('quiz_saved.html', data=quiz_data[index], index=index,)
 
 @app.route('/tails')
 def tails():
@@ -182,10 +197,24 @@ def earsAndeyes():
 @app.route('/quiz_get_result', methods=['POST'])
 def quiz_get_result():
     global user_score
-    get = request.get_json()
-    print(get)
-    user_score += get
-    return jsonify(user_score=user_score)
+    global save
+
+    answer = request.get_json()
+    print(answer)
+    idx=answer["idx"]
+    score=answer["score"]
+    save[idx]=answer["save"]
+    user_score[int(idx)-1]=score
+    return jsonify(user_score=user_score, answer=score, save=save[idx])
+
+@app.route('/quiz_check_save', methods=['POST'])
+def quiz_check_save():
+    global save
+
+    idx= request.get_json()
+
+    
+    return jsonify(save=save[idx])
 
 @app.route('/result',methods=['GET', 'POST'])
 def result():
