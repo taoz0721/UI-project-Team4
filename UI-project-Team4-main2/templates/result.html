@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'result.js') }}"></script>
+<nav class="navbar navbar-expand-lg navbar-light nav_bg">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav col">
+        <li class="nav-item active col-2">
+          <a class="nav-link text-light nav_text" href="/">HOME</a>
+        </li>
+        <li class="nav-item active col-2">
+          <a class="nav-link text-light nav_text" href="/body">BODY</a>
+        </li>
+        <li class="nav-item active col-2">
+          <a class="nav-link text-light nav_text" href="/tails">TAILS</a>
+        </li>
+        <li class="nav-item active col-3">
+          <a class="nav-link text-light nav_text" href="/earsandeyes">EARS & EYES</a>
+        </li>
+        <li class="nav-item dropdown col-3 choose-color">
+          <a class="nav-link dropdown-toggle text-light nav_text" href="/quiz/body" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            QUIZ
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/quiz/body">Body - Quiz</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Tails - Quiz</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Ears and Eyes - Quiz</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+<div class="row">
+    <div class="col">
+        <span id="quiz_title">Quiz</span>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-6 text_center" id="quiz_result">
+        <br><br><br><br>
+        Your Score {{data}}/1
+    </div>
+    <div class="col-6" id="result_img">
+        <img src="https://nutrisourcepetfoods.com/wp-content/uploads/2021/12/cat-yowl.-.jpg" width="100%" alt="cat">
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-10 text_center">
+        <button id="back_home">Back Home</button>
+    </div>
+    <div class="col">
+    </div>
+</div>
+<br>
+
+{% endblock %}

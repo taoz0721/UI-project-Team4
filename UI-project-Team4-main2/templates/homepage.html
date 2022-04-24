@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'homepage.js') }}"></script>
+<nav class="navbar navbar-expand-lg navbar-light nav_bg">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav col">
+        <li class="nav-item active col-2 choose-color">
+          <a class="nav-link text-light nav_text" href="/">HOME</a>
+        </li>
+        <li class="nav-item active col-2">
+          <a class="nav-link text-light nav_text" href="/body">BODY</a>
+        </li>
+        <li class="nav-item active col-2">
+          <a class="nav-link text-light nav_text" href="/tails">TAILS</a>
+        </li>
+        <li class="nav-item active col-3">
+          <a class="nav-link text-light nav_text" href="/earsandeyes">EARS & EYES</a>
+        </li>
+        <li class="nav-item dropdown col-3">
+          <a class="nav-link dropdown-toggle text-light nav_text" href="/quiz/body" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            QUIZ
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/quiz/body">Body - Quiz</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Tails - Quiz</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Ears and Eyes - Quiz</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div class="row">
+    <div class="col text_center" id="home_text">
+        <span id="home_title">Understand Cat's Body Languages</span>
+        <br>
+        <span id="home_content">Want to know your cat's mind? </span>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col text_center" id="home_logo">
+        <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2016/10_October/persians/Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min.jpg" alt="Cat picture homepage">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col text_center" id="home_logo">
+        <button id="home_start">Let's Get Started!</button>
+    </div>
+</div>
+{% endblock %}

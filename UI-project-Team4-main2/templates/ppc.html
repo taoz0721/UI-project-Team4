@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"crossorigin="anonymous">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <style>
+            .title{
+                background-color: rgb(236, 238, 245);
+                font-size: x-large;
+                font-weight: bold;
+                padding-left: 20px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .attribute{
+                background-color: lightblue;
+                font-size: large;
+                font-weight: bold;
+                padding: 15px;
+            }
+            .name{
+                border: 1px solid silver;
+            }
+            .ui_highlight {
+                background-color: lightyellow;
+                cursor: move;
+            }
+            .dark{
+                background-color: skyblue;
+            }
+            .darker{
+                background-color: cornflowerblue;
+            }
+
+            
+        </style>
+
+        <script src="ppc.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 title">
+                    Party Planning Committee
+                </div> 
+            </div><br>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div id="nppc" class="attribute">
+                        Non-PPC
+                    </div>
+                    <div id="nppc-list">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div id="ppc" class="attribute">
+                        PPC
+                    </div>
+                    <div id="ppc-list">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                </div>
+            </div>   
+        </div>
+    </body>
+</html>
