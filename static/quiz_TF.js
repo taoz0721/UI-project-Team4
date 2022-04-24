@@ -9,11 +9,13 @@ $(document).ready(function(){
         if(radioValue){
            if(radioValue=="False"){
            }
+           index+=1
+           window.location.href='/quiz/index';
         }
         else{
             alert("You have to choose an option!")
         }
-        window.location.href='/result';
+        
     })
 
     $("#save").click(function(){

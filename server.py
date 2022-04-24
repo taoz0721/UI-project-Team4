@@ -77,14 +77,60 @@ ears_eyes_data=[
         "description":{"Ears": "Forwards", "Eyes": "Slow Blink"}
     }
 ]
-body_quiz_data=[
-    {
+quiz_data={
+    "1": {
+        "type": "Drag",
+        "area":"body",
+        "question":"Drag to match the image with the corresponding emotion according to the body shape.",
+        "material": {
+            "https://cdn-fastly.petguide.com/media/2022/02/16/8259958/what-does-a-cat-s-arched-back-mean.jpg": "Aggression",
+            "https://www.nutravet.co.uk/sites/default/files/user/calm-cat.jpg": "Anxiety/Fear",
+            "https://www.treehugger.com/thmb/QIn7TRcupWFqir0DCIYLTaqrZ3Q=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/tabby-cat-on-a-bed-862512230-2d351b8055254269aab1381e7c077f1e.jpg": "Confident"
+        },
+        "tags":[
+            "Confident",
+            "Anxiety/Fear",
+            "Aggression"    
+        ]
+    },
+    "2":{
+        "type": "TF",
+        "area":"body",
         "question":"When a cat lie on its back like the video below, it definitely means that it requests a tummy rub.",
         "material":"https://cdn.shopify.com/s/files/1/0025/1373/1702/files/Cat_lying_on_its_back_with_tail_in_the_air_medium.gif?v=1537362532",
-        "answer":"False",
-        "type": "TF"
+        "answer":"False"
+    },
+    "3":{
+        "type": "Drag",
+        "area": "tails",
+        "question":"Drag to match the image with the corresponding emotion according to the hints of tails.",
+        "material":{
+            "https://c.tenor.com/34emVVQvzPMAAAAM/cat-white-cat.gif": "Friendly",
+            "https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat": "Anxious, Terrified",
+            "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4": "Irritated, Upset"
+        },
+        "tags":[
+            "Irritated, Upset",
+            "Friendly",
+            "Anxious, Terrified"
+        ]
+    },
+    "4":{
+        "type": "Drag",
+        "area": "earsandeyes",
+        "question":"Drag to match the image with the corresponding emotion according to the hints of ears and eyes.",
+         "material":{
+            "https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif": "Angery, Fearful",
+            "https://i.gifer.com/ziH.gif": "Attentive",
+            "https://c.tenor.com/BjPLwhBwD1oAAAAM/ryuzcn.gif": "Content, Relaxed, Comfortable"
+        },
+        "tags":[
+            "Attentive",
+            "Comfortable",
+            "Angery/Fearful"
+        ]
     }
-]
+}
 progress=[]
 score=1
 user_score = 0
@@ -108,13 +154,13 @@ def body():
     progress.append("body")
     return render_template('body.html', data=body_data)
 
-@app.route('/quiz/body')
-def bodyQuiz():
-    global body_quiz_data
+@app.route('/quiz/<index>')
+def bodyQuiz(index=None):
+    global quiz_data
     global progress
-    global score
-    progress.append("quiz/body")
-    return render_template('bodyQuiz.html', data=body_quiz_data, score=score)  
+
+    progress.append("quiz")
+    return render_template('bodyQuiz.html', data=quiz_data[index], index=index)  
 
 @app.route('/tails')
 def tails():

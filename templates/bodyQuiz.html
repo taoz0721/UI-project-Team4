@@ -4,6 +4,9 @@
 
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'quiz_TF.js') }}"></script>
+<script>
+  let index= {{index|tojson}}
+</script>
 
 <nav class="navbar navbar-expand-lg navbar-light nav_bg">
   <div class="container">
@@ -52,31 +55,53 @@
 <br>
 <div class="row">
     <div class="col" id="quiz_content">
-        {% for ques in data %}
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-10 quiz_question">{{loop.index}}. {{ques.question}}</div>
+                <div class="col-10 quiz_question" data-idx="{{index}}" data-type="{{data.type}}">{{index}}. {{data.question}}</div>
                 <div class="col-1"></div>
             </div>
             <br>
+            {% if data.type == "TF" %}
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10 quiz_question">
-                    <img src="{{ques.material}}" alt="cat lie on back">
+                    <img src="{{data.material}}" alt="cat lie on back">
                 </div>
                 <div class="col-1"></div>
             </div>
             <br>
             <div class="row">
                 <div class="col-2"></div>
-                <div class="col-3 quiz_answer">
+                <div class="col-3 quiz_answer" id="answer" data-answer="{{data.answer}}">
                     <input type="radio" name="TF" value="True"> True<br>
                     <input type="radio" name="TF" value="False"> False<br>
                 </div>
                 <div class="col-7"></div>
             </div>
+
+            {% else %}
+            <div class="row" id="material_div">
+              <div class="col-1"></div>
+              {% for image, answer in data.material.items() %}
+              <div class="col-3 quiz_question">
+                  <img src="{{image}}" class="quiz_image">
+                  <br>
+                  <div class="drop_div" data-answer="{{answer}}"></div>
+                  <div class="check_div" id="{{answer}}"></div>
+              </div>
+              {% endfor %}
+              <div class="col-1"></div>
+            </div>
             <br>
-        {% endfor %}
+            <div class="row" id="tag_div">
+              <div class="col-1"></div>
+              {% for tag in data.tags %}
+              <div class="col-3 draggable_tag">{{tag}}</div>
+              {% endfor%}
+              <div class="col-1"></div>
+            </div>
+            <br>
+            {% endif %}
     </div>
 </div>
 <br>
