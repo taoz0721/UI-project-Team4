@@ -106,13 +106,13 @@ quiz_data={
         "question":"Drag to match the image with the corresponding emotion according to the hints of tails.",
         "material":{
             "https://c.tenor.com/34emVVQvzPMAAAAM/cat-white-cat.gif": "Friendly",
-            "https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat": "Anxious",
-            "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4": "Irritated/Upset"
+            "https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat": "Terrified",
+            "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4": "Irritated"
         },
         "tags":[
-            "Irritated/Upset",
+            "Irritated",
             "Friendly",
-            "Anxious"
+            "Terrified"
         ]
     },
     "4":{
@@ -120,14 +120,14 @@ quiz_data={
         "area": "earsandeyes",
         "question":"Drag to match the image with the corresponding emotion according to the hints of ears and eyes.",
          "material":{
-            "https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif": "Angery/Fearful",
+            "https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif": "Angery",
             "https://i.gifer.com/ziH.gif": "Attentive",
             "https://c.tenor.com/BjPLwhBwD1oAAAAM/ryuzcn.gif": "Comfortable"
         },
         "tags":[
             "Attentive",
             "Comfortable",
-            "Angery/Fearful"
+            "Angery"
         ]
     }
 }
