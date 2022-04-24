@@ -22,15 +22,17 @@
           <a class="nav-link text-light nav_text" href="/earsandeyes">EARS & EYES</a>
         </li>
         <li class="nav-item dropdown col-3 choose-color">
-          <a class="nav-link dropdown-toggle text-light nav_text" href="/quiz/body" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-light nav_text" href="/quiz" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             QUIZ
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/quiz/body">Body - Quiz</a>
+            <a class="dropdown-item" href="/quiz/1">Body - Quiz</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Tails - Quiz</a>
+            <a class="dropdown-item" href="/quiz/3">Tails - Quiz</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Ears and Eyes - Quiz</a>
+            <a class="dropdown-item" href="/quiz/4">Ears and Eyes - Quiz</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/result">Result</a>
           </div>
         </li>
       </ul>
@@ -50,7 +52,7 @@
 <div class="row">
     <div class="col-6 text_center" id="quiz_result">
         <br><br><br><br>
-        Your Score {{data}}/1
+        Your Score {{data}}/4
     </div>
     <div class="col-6" id="result_img">
         <img src="https://nutrisourcepetfoods.com/wp-content/uploads/2021/12/cat-yowl.-.jpg" width="100%" alt="cat">
@@ -63,10 +65,13 @@
     </div>
     <div class="col-10 text_center">
         <button id="back_home">Back Home</button>
+        <br>
+        <br>
+        <button id="redo">Redo Quiz</button>
     </div>
     <div class="col">
     </div>
 </div>
-<br>
+
 
 {% endblock %}

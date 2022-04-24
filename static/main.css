@@ -113,6 +113,22 @@
     -webkit-transform: rotate(-45deg);
 }
 /*quiz*/
+.quiz_start{
+    color:#666666;
+    font-family: system-ui;;
+    font-weight: 800;
+    font-size: 33px;
+    text-align: center;
+}
+.start_quiz_btn{
+    color:whitesmoke;
+    font-family: system-ui;
+    padding: 5px 15px;
+    font-size: 30px;
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    border: 1px solid cornflowerblue;
+}
 .quiz_question, #quiz_result{
     color: #666666;
     font-family: system-ui;
@@ -124,7 +140,7 @@
     font-family: system-ui;
     font-size: 22px;
 }
-#back_home{
+#back_home, #redo{
     color:whitesmoke;
     font-family: system-ui;
     padding: 5px 15px;

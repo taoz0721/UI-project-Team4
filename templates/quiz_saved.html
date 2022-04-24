@@ -3,11 +3,11 @@
 {% block content %}
 
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_TF.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_saved.js') }}"></script>
 <script>
   let idx= {{index|tojson}}
   let data = {{data|tojson}}
-  let HasSaved={{save|tojson}}
+  let user_answer={{user_answer|tojson}}
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light nav_bg">
@@ -30,15 +30,17 @@
           <a class="nav-link text-light nav_text" href="/earsandeyes">EARS & EYES</a>
         </li>
         <li class="nav-item dropdown col-3 choose-color">
-          <a class="nav-link dropdown-toggle text-light nav_text" href="/quiz/body" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-light nav_text" href="/quiz" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             QUIZ
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/quiz/body">Body - Quiz</a>
+            <a class="dropdown-item" href="/quiz/1">Body - Quiz</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Tails - Quiz</a>
+            <a class="dropdown-item" href="/quiz/3">Tails - Quiz</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Ears and Eyes - Quiz</a>
+            <a class="dropdown-item" href="/quiz/4">Ears and Eyes - Quiz</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/result">Result</a>
           </div>
         </li>
       </ul>
@@ -75,7 +77,7 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-3 quiz_answer" id="answer" data-answer="{{data.answer}}">
-                    <input type="radio" name="TF" value="True" data-id="T"> True <div class="check_div_TF" data-id="T"></div><br>
+                    <input type="radio" name="TF" value="True" data-id="T" > True <div class="check_div_TF" data-id="T"></div><br>
                     <input type="radio" name="TF" value="False" data-id="F"> False <div class="check_div_TF" data-id="F"></div><br>
                 </div>
                 <div class="col-7"></div>
@@ -96,13 +98,7 @@
               {% endfor %}
             </div>
             <br>
-            <div class="row" id="tag_div">
-              {% for tag in data.tags %}
-              <div class="col-1"></div>
-              <div class="col-2 tag_div" data-value="{{tag}}"><div class="draggable_tag" data-value="{{tag}}">{{tag}}</div></div>
-              <div class="col-1"></div>
-              {% endfor%}
-            </div>
+            <div class="row" id="tag_div"></div>
             <br>
             {% endif %}
     </div>

@@ -140,7 +140,7 @@ save={
     "3": False,
     "4": False
 }
-answer={
+user_answer={
     "1": None,
     "2": None,
     "3": None,
@@ -165,6 +165,14 @@ def body():
     progress.append("body")
     return render_template('body.html', data=body_data)
 
+@app.route('/quiz')
+def quiz():
+    global body_data
+    global progress
+
+    progress.append("quiz")
+    return render_template('quiz_start.html')
+
 @app.route('/quiz/<index>')
 def bodyQuiz(index=None):
     global quiz_data
@@ -172,10 +180,13 @@ def bodyQuiz(index=None):
     global save
 
     progress.append("quiz")
+    print(save[index])
     if save[index]==False:
+        
         return render_template('bodyQuiz.html', data=quiz_data[index], index=index, save=save[index])
     else:
-        return render_template('quiz_saved.html', data=quiz_data[index], index=index,)
+        print(user_answer[index])
+        return render_template('quiz_saved.html', data=quiz_data[index], index=index, user_answer=user_answer[index])
 
 @app.route('/tails')
 def tails():
@@ -198,6 +209,7 @@ def earsAndeyes():
 def quiz_get_result():
     global user_score
     global save
+    global user_answer
 
     answer = request.get_json()
     print(answer)
@@ -205,6 +217,10 @@ def quiz_get_result():
     score=answer["score"]
     save[idx]=answer["save"]
     user_score[int(idx)-1]=score
+
+    #if answer["type"]=="TF":
+    user_answer[idx]=answer["answer"]
+    
     return jsonify(user_score=user_score, answer=score, save=save[idx])
 
 @app.route('/quiz_check_save', methods=['POST'])
@@ -216,13 +232,29 @@ def quiz_check_save():
     
     return jsonify(save=save[idx])
 
+@app.route('/quiz_redo', methods=['POST'])
+def quiz_redo():
+    global save
+    global user_answer
+    global user_score
+
+    data_refresh= request.get_json()
+    save=data_refresh["save"]
+    user_answer=data_refresh["user_answer"]
+    user_score=data_refresh["user_score"]
+    
+    return jsonify(data=user_score)
+
 @app.route('/result',methods=['GET', 'POST'])
 def result():
     #global score
     global user_score
     global progress
+
+    data=sum(user_score)
+    print(user_score)
     progress.append("result")
-    return render_template('result.html', data=user_score) 
+    return render_template('result.html', data=data) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):

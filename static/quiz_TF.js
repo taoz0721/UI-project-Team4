@@ -145,9 +145,9 @@ function saveTF(data, idx){
         var radioValue = $("input[name='TF']:checked").val();
         console.log(radioValue);
         if(radioValue){
-            let answer = {"score":0, "idx":idx, "save":true};
+            let answer = {"score":0, "idx":idx, "save":true, "type": "TF", "answer":radioValue};
             if(radioValue==data["answer"]){
-                answer = {"score":1, "idx":idx, "save":true};
+                answer = {"score":1, "idx":idx, "save":true, "type": "TF", "answer":radioValue};
             }
            $.ajax({
                 type: "POST",
@@ -197,11 +197,12 @@ function saveDrop(data, idx){
         
         if(count==3){
             let right_num=0;
-            let answer={"score":0, "idx":idx, "save":true};
+            let answer={"score":0, "idx":idx, "save":true, "type": "Drag", "answer":{}};
             let final_check='';
             console.log("all checked");
             $.each(data["tags"],function(index, value){
                 final_check=$(".drop_div[data-answer='"+value+"']").children().text();
+                answer["answer"][value]=final_check;
                 console.log(final_check);   
                 if(final_check==value){
                     right_num+=1;
@@ -212,7 +213,7 @@ function saveDrop(data, idx){
                 }       
             });
             if(right_num==3){
-                answer={"score":1, "idx":idx, "save":true};;
+                answer["score"]=1;
             }
             $.ajax({
                 type: "POST",
