@@ -83,9 +83,9 @@ quiz_data={
         "area":"body",
         "question":"Drag to match the image with the corresponding emotion according to the body shape.",
         "material": {
-            "https://cdn-fastly.petguide.com/media/2022/02/16/8259958/what-does-a-cat-s-arched-back-mean.jpg": "Aggression",
-            "https://www.nutravet.co.uk/sites/default/files/user/calm-cat.jpg": "Anxiety/Fear",
-            "https://www.treehugger.com/thmb/QIn7TRcupWFqir0DCIYLTaqrZ3Q=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/tabby-cat-on-a-bed-862512230-2d351b8055254269aab1381e7c077f1e.jpg": "Confident"
+            "https://2.bp.blogspot.com/-e-mmKK8Lud4/XFXm_-VVRhI/AAAAAAAABK0/tPvppYyYoNkiy7F9RsjbYMtrXHXXOo4RQCLcBGAs/s1600/Hilarious%2Bcat%2BGIF%2B%25E2%2580%25A2%2BCrazy%2Bcat%2Bscared%2Bof%2Bhis%2Bown%2Breflection%2Bin%2Bthe%2Bmirror%2Bhaha.gif": "Aggression",
+            "https://cdn.mos.cms.futurecdn.net/tjvena7BNVijpzVQ3fsCPX-1200-80.jpg": "Anxiety/Fear",
+            "https://media0.giphy.com/media/Ter8NaRzBVjGGk6MRS/giphy.gif?cid=790b7611ffddb9550ac8ec9f5f5868f1b5c7c772e50bbd55&rid=giphy.gif&ct=g": "Confident"
         },
         "tags":[
             "Confident",

@@ -93,15 +93,17 @@
               {% for image, answer in data.material.items() %}
               <div class="col-1"></div>
               <div class="col-2 quiz_question">
-                  <div><img src="{{image}}" class="quiz_image"></div>
+                  <div class="quiz_image_div"><img src="{{image}}" class="quiz_image"></div>
                   <br>
                   <div class="drop_div" data-answer="{{answer}}"></div>
                   <br>
                   <div class="check_div" data-answer="{{answer}}"></div>
-              </div>
+              </div> 
               <div class="col-1"></div>
               {% endfor %}
             </div>
+            <br>
+            
             <br>
             <div class="row" id="tag_div">
               {% for tag in data.tags %}
