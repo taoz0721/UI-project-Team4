@@ -84,7 +84,7 @@ quiz_data={
         "question":"Drag to match the image with the corresponding emotion according to the body shape.",
         "material": {
             "https://2.bp.blogspot.com/-e-mmKK8Lud4/XFXm_-VVRhI/AAAAAAAABK0/tPvppYyYoNkiy7F9RsjbYMtrXHXXOo4RQCLcBGAs/s1600/Hilarious%2Bcat%2BGIF%2B%25E2%2580%25A2%2BCrazy%2Bcat%2Bscared%2Bof%2Bhis%2Bown%2Breflection%2Bin%2Bthe%2Bmirror%2Bhaha.gif": "Aggression",
-            "https://c.tenor.com/28pHwbN9PacAAAAM/cat-kitty.gif": "Anxiety/Fear",
+            "https://media0.giphy.com/media/MpNy5P7x5vWM0/giphy.gif?cid=790b7611fe2dddb7cce9113fe2f66ef5834739e834221e62&rid=giphy.gif&ct=g": "Anxiety/Fear",
             "https://media0.giphy.com/media/Ter8NaRzBVjGGk6MRS/giphy.gif?cid=790b7611ffddb9550ac8ec9f5f5868f1b5c7c772e50bbd55&rid=giphy.gif&ct=g": "Confident"
         },
         "tags":[
