@@ -122,7 +122,7 @@ quiz_data={
          "material":{
             "https://thumbs.gfycat.com/BlindKeyCowrie-size_restricted.gif": "Angery",
             "https://i.pinimg.com/originals/e9/60/fa/e960fad6069ff3f5b6c8a27b31f1c1e5.gif": "Attentive",
-            "https://i.pinimg.com/originals/9d/84/3d/9d843d6abd5b9875946f746b834ec5e3.gif": "Comfortable"
+            "https://i.chzbgr.com/full/9566880512/hA3C5065B/cat": "Comfortable"
         },
         "tags":[
             "Attentive",
