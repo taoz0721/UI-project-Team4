@@ -97,7 +97,7 @@ quiz_data={
         "type": "TF",
         "area":"body",
         "question":"When a cat lie on its back like the video below, it definitely means that it requests a tummy rub.",
-        "material":"https://cdn.shopify.com/s/files/1/0025/1373/1702/files/Cat_lying_on_its_back_with_tail_in_the_air_medium.gif?v=1537362532",
+        "material":"https://akns-images.eonline.com/eol_images/Entire_Site/201478/rs_500x281-140808101812-tumblr_n4jwzrs6tK1spy7ono1_500.gif?fit=around%7C500:281&output-quality=90&crop=500:281;center,top",
         "answer":"False"
     },
     "3":{
@@ -105,9 +105,9 @@ quiz_data={
         "area": "tails",
         "question":"Drag to match the image with the corresponding emotion according to the hints of tails.",
         "material":{
-            "https://c.tenor.com/34emVVQvzPMAAAAM/cat-white-cat.gif": "Friendly",
-            "https://i.chzbgr.com/full/5410093568/hC859EDE5/scared-cat": "Terrified",
-            "https://p1-tt.byteimg.com/origin/tos-cn-i-qvj2lq49k0/32b24969f9c64ed08c14fc549478e9b4": "Irritated"
+            "https://c.tenor.com/8erPxXJ65nIAAAAM/cat-waddling.gif": "Friendly",
+            "https://c.tenor.com/z4ojU1xR-qoAAAAC/cat-funny-cat.gif": "Terrified",
+            "https://c.tenor.com/ZPWp8yBockgAAAAC/annoyed-cat.gif": "Irritated"
         },
         "tags":[
             "Irritated",
@@ -120,9 +120,9 @@ quiz_data={
         "area": "earsandeyes",
         "question":"Drag to match the image with the corresponding emotion according to the hints of ears and eyes.",
          "material":{
-            "https://c.tenor.com/aZMOFP1N5TEAAAAM/angry-cat-triggered.gif": "Angery",
-            "https://i.gifer.com/ziH.gif": "Attentive",
-            "https://c.tenor.com/BjPLwhBwD1oAAAAM/ryuzcn.gif": "Comfortable"
+            "https://thumbs.gfycat.com/BlindKeyCowrie-size_restricted.gif": "Angery",
+            "https://i.pinimg.com/originals/e9/60/fa/e960fad6069ff3f5b6c8a27b31f1c1e5.gif": "Attentive",
+            "https://i.pinimg.com/originals/9d/84/3d/9d843d6abd5b9875946f746b834ec5e3.gif": "Comfortable"
         },
         "tags":[
             "Attentive",
