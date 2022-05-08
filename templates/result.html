@@ -26,13 +26,60 @@
             QUIZ
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/quiz/1">Q1 - Quiz</a>
+            <a class="dropdown-item" href="/quiz/1">
+              Q1 - Quiz
+              <div class="progress" id="quiz_1_progress">
+                {% if progress.quiz_1_progress.save %}
+                 {% if progress.quiz_1_progress.user_score==1 %}
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mYBIRnyLDSh0OYf4pS2fd0xid0HVP81NysKqcOYPg0FOth7K7VUNpxmtJ_cyV8NQAaA&usqp=CAU" width="100%">
+                 {% else %}
+                 <img src="https://us.123rf.com/450wm/vectora/vectora1704/vectora170401047/75817847-red-cross-symbol-icon-as-delete-remove-fail-failure-or-incorrect-answer-icon.jpg" width="100%">
+                 {% endif %}
+                {% endif %}
+              </div>
+            </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/quiz/2">Q2 - Quiz</a>
+
+            <a class="dropdown-item" href="/quiz/2">
+              Q2 - Quiz
+              <div class="progress" id="quiz_2_progress">
+                {% if progress.quiz_2_progress.save %}
+                 {% if progress.quiz_2_progress.user_score==1 %}
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mYBIRnyLDSh0OYf4pS2fd0xid0HVP81NysKqcOYPg0FOth7K7VUNpxmtJ_cyV8NQAaA&usqp=CAU" width="100%">
+                 {% else %}
+                 <img src="https://us.123rf.com/450wm/vectora/vectora1704/vectora170401047/75817847-red-cross-symbol-icon-as-delete-remove-fail-failure-or-incorrect-answer-icon.jpg" width="100%">
+                 {% endif %}
+                {% endif %}
+              </div>
+            </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/quiz/3">Q3 - Quiz</a>
+
+            <a class="dropdown-item" href="/quiz/3">
+              Q3 - Quiz
+              <div class="progress" id="quiz_3_progress">
+                {% if progress.quiz_3_progress.save %}
+                 {% if progress.quiz_3_progress.user_score==1 %}
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mYBIRnyLDSh0OYf4pS2fd0xid0HVP81NysKqcOYPg0FOth7K7VUNpxmtJ_cyV8NQAaA&usqp=CAU" width="100%">
+                 {% else %}
+                 <img src="https://us.123rf.com/450wm/vectora/vectora1704/vectora170401047/75817847-red-cross-symbol-icon-as-delete-remove-fail-failure-or-incorrect-answer-icon.jpg" width="100%">
+                 {% endif %}
+                {% endif %}
+              </div>
+            </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/quiz/4">Q4 - Quiz</a>
+
+            <a class="dropdown-item" href="/quiz/4">
+              Q4 - Quiz
+              <div class="progress" id="quiz_4_progress">
+                {% if progress.quiz_4_progress.save %}
+                 {% if progress.quiz_4_progress.user_score==1 %}
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mYBIRnyLDSh0OYf4pS2fd0xid0HVP81NysKqcOYPg0FOth7K7VUNpxmtJ_cyV8NQAaA&usqp=CAU" width="100%">
+                 {% else %}
+                 <img src="https://us.123rf.com/450wm/vectora/vectora1704/vectora170401047/75817847-red-cross-symbol-icon-as-delete-remove-fail-failure-or-incorrect-answer-icon.jpg" width="100%">
+                 {% endif %}
+                {% endif %}
+              </div>
+            </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/result">Result</a>
           </div>
@@ -54,7 +101,11 @@
 <div class="row">
     <div class="col-6 text_center" id="quiz_result">
         <br><br><br><br>
-        Your Score {{data}}/4
+        {% if data.complete %}
+        Your Score {{data.score}}/4
+        {% else %}
+        You have not done the quiz!
+        {% endif %}
     </div>
     <div class="col-6" id="result_img">
         <img src="https://nutrisourcepetfoods.com/wp-content/uploads/2021/12/cat-yowl.-.jpg" width="100%" alt="cat">

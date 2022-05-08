@@ -132,6 +132,7 @@ quiz_data={
     }
 }
 progress=[]
+quiz_progress={}
 score=1
 user_score = [0,0,0,0]
 save={
@@ -153,56 +154,187 @@ user_answer={
 @app.route('/')
 def homepage():
     global progress
+    global quiz_progress
+    global save
+    global user_score
+
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
 
     progress.append("home")
-    return render_template('homepage.html')   
+    return render_template('homepage.html', progress=quiz_progress)   
 
 @app.route('/body')
 def body():
     global body_data
     global progress
+    global quiz_progress
+    global save
+    global user_score
+
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
 
     progress.append("body")
-    return render_template('body.html', data=body_data)
+    return render_template('body.html', data=body_data, progress=quiz_progress)
 
 @app.route('/quiz')
 def quiz():
     global body_data
     global progress
+    global quiz_progress
+    global save
+    global user_score
+
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
 
     progress.append("quiz")
-    return render_template('quiz_start.html')
+    return render_template('quiz_start.html', progress=quiz_progress)
 
 @app.route('/quiz/<index>')
 def bodyQuiz(index=None):
     global quiz_data
     global progress
     global save
+    global quiz_progress
+    global user_score
+
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
 
     progress.append("quiz")
     print(save[index])
     if save[index]==False:
         
-        return render_template('bodyQuiz.html', data=quiz_data[index], index=index, save=save[index])
+        return render_template('bodyQuiz.html', data=quiz_data[index], index=index, save=save[index], progress=quiz_progress)
     else:
         print(user_answer[index])
-        return render_template('quiz_saved.html', data=quiz_data[index], index=index, user_answer=user_answer[index])
+        return render_template('quiz_saved.html', data=quiz_data[index], index=index, user_answer=user_answer[index], progress=quiz_progress)
 
 @app.route('/tails')
 def tails():
     global tails_data
     global progress
+    global quiz_progress
+    global save
+    global user_score
 
-    progress.append("")
-    return render_template('tails.html', data=tails_data) 
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
+
+    progress.append("tails")
+    return render_template('tails.html', data=tails_data, progress=quiz_progress) 
 
 @app.route('/earsandeyes')
 def earsAndeyes():
     global ears_eyes_data
     global progress
+    global quiz_progress
+    global save
+    global user_score
+
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
 
     progress.append("earsandeyes")
-    return render_template('earsAndeyes.html', data=ears_eyes_data)
+    return render_template('earsAndeyes.html', data=ears_eyes_data, progress=quiz_progress)
 
 # for ajax function that achieve user's choice
 @app.route('/quiz_get_result', methods=['POST'])
@@ -250,11 +382,41 @@ def result():
     #global score
     global user_score
     global progress
+    global quiz_progress
+    global save
+    global user_score
 
-    data=sum(user_score)
+    quiz_progress={
+        "quiz_1_progress": {
+            "save": save["1"],
+            "user_score":user_score[0]
+        },
+        "quiz_2_progress":{
+            "save": save["2"],
+            "user_score":user_score[1]
+        },
+        "quiz_3_progress":{
+            "save": save["3"],
+            "user_score":user_score[2]
+        },
+        "quiz_4_progress":{
+            "save": save["4"],
+            "user_score":user_score[3]
+        }
+    }
+
+    data={
+        "score":sum(user_score)
+        }
     print(user_score)
     progress.append("result")
-    return render_template('result.html', data=data) 
+
+    if False in save.values():
+        data["complete"]=False
+        return render_template('result.html', data=data, progress=quiz_progress)
+    else:
+        data["complete"]=True
+        return render_template('result.html', data=data, progress=quiz_progress) 
 
 @app.route('/hello/<name>')
 def hello_name(name=None):
